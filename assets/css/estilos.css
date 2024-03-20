@@ -7,6 +7,116 @@
 
 body {
   background: black;
+  width: 100vw;
+}
+
+.contenedor {
+  position: relative;
+  width: 100vw;
+  height: 500px;
+  overflow: hidden;
+}
+
+.bubbles {
+  position: relative;
+  display: flex;
+}
+
+.bubbles span {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background: whitesmoke;
+  margin: 0 5px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px #4fc3dc44, 0 0 50px #4fc3dc, 0 0 100px #4fc3dc;
+  animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+  from {
+    transform: translateY(0) scale(0);
+  }
+
+  to {
+    transform: translateY(400px) scale(2);
+  }
+}
+
+.container {
+  width: 100%;
+  height: 100px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  font-size: 3em;
+  animation: move 5s infinite;
+  animation-direction: alternate;
+}
+
+@keyframes move {
+  from {
+    transform: translateX(-250px);
+    color: black;
+  }
+  to {
+    transform: translateX(250px);
+    color: red;
+  }
+}
+
+.cards {
+  height: 400px;
+  display: flex;
+  background: red;
+  justify-content: center;
+  align-items: center;
+}
+
+.foto-container {
+  border: 2px solid black;
+  text-align: center;
+  padding: 20px 20px;
+  margin: 20px 50px;
+  background: rgb(240, 216, 200);
+  box-sizing: border-box;
+}
+
+#foto {
+  border-radius: 50px;
+  box-shadow: 5px 5px grey;
+  width: 120px;
+  margin: 10px 0;
+  transition: 5s ease-out;
+  animation: girar 5s infinite;
+  animation-direction: alternate;
+}
+
+@keyframes girar {
+  from {
+    transform: rotateY(0);
+  }
+
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.párrafo {
+  font-size: 12px;
+  text-align: center;
+}
+
+.otro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  height: 300px;
 }
 
 button {
@@ -19,6 +129,7 @@ button {
   font-size: 16px;
   border: none;
   border-radius: 5px;
+  height: 50px;
   transition: background-color 5s ease-out, font-weight 3s ease-out;
 }
 
@@ -105,34 +216,5 @@ a span:hover {
   }
   to {
     background: green;
-  }
-}
-
-.container {
-  width: 100%;
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: start;
-  color: black;
-  background: white;
-}
-
-.text {
-  font-size: 3em;
-  animation: move 5s infinite;
-  animation-direction: alternate;
-}
-
-@keyframes move {
-  from {
-    transform: translateY(0);
-    color: black;
-    font-size: 3em;
-  }
-  to {
-    transform: translateY(200px);
-    color: red;
-    font-size: 5em;
   }
 }
